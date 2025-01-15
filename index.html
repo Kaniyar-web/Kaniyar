@@ -3,89 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Webinar Platform</title>
+    <title>My Meet Platform</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
         }
         header {
-            background-color: #4CAF50;
+            background-color: #1a73e8;
             color: white;
+            padding: 20px;
             text-align: center;
-            padding: 1rem 0;
         }
         .container {
             max-width: 800px;
-            margin: 2rem auto;
-            text-align: center;
-            padding: 1rem;
-            background: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
             border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        p {
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
+        input[type="text"] {
+            padding: 10px;
+            width: 70%;
+            font-size: 16px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
         .join-button {
-            display: inline-block;
-            background-color: #4CAF50;
+            padding: 12px 24px;
+            background-color: #1a73e8;
             color: white;
-            text-decoration: none;
-            padding: 0.8rem 1.5rem;
+            border: none;
             border-radius: 5px;
-            font-size: 1rem;
-            transition: background 0.3s;
+            font-size: 18px;
+            cursor: pointer;
         }
         .join-button:hover {
-            background-color: #45a049;
+            background-color: #185abc;
         }
         iframe {
             width: 100%;
-            height: 500px;
+            height: 600px;
             border: none;
-            margin-top: 2rem;
+            margin-top: 20px;
+            display: none;
         }
         footer {
             text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-            background-color: #f4f4f9;
-            font-size: 0.9rem;
-            color: #777;
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #f3f3f3;
         }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>Welcome to Your Free Webinar Platform</h1>
+        <h1>Welcome to My Meet Platform</h1>
+        <p>Create or Join a Video Meeting</p>
     </header>
 
     <div class="container">
-        <h1>Join Our Webinar</h1>
-        <p>Click the button below to join the live webinar session.</p>
-        <a href="#" class="join-button" onclick="startWebinar()">Join Webinar</a>
+        <h2>Join a Meeting</h2>
+        <input type="text" id="roomName" placeholder="Enter Room Name" />
+        <button class="join-button" onclick="startMeeting()">Join Meeting</button>
 
-        <iframe id="webinarFrame" style="display:none;"></iframe>
+        <iframe id="meetFrame" src="" style="display:none;"></iframe>
     </div>
 
     <footer>
-        <p>&copy; 2025 Your Webinar Platform. All rights reserved.</p>
+        <p>&copy; 2025 My Meet Platform. All rights reserved.</p>
     </footer>
 
     <script>
-        function startWebinar() {
-            const iframe = document.getElementById('webinarFrame');
-            iframe.style.display = 'block';
-            iframe.src = 'https://meet.jit.si/YourWebinarRoom'; // Replace with your custom meeting link if needed
+        function startMeeting() {
+            var roomName = document.getElementById('roomName').value;
+            if (roomName) {
+                var iframe = document.getElementById('meetFrame');
+                iframe.style.display = 'block';
+                iframe.src = 'https://meet.jit.si/' + roomName;  // Jitsi Meet URL with the custom room name
+            } else {
+                alert('Please enter a room name');
+            }
         }
     </script>
 </body>
