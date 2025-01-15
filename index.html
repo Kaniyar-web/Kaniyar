@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Webinar Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            text-align: center;
+            padding: 1rem;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .join-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+        .join-button:hover {
+            background-color: #45a049;
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            margin-top: 2rem;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+            background-color: #f4f4f9;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Your Free Webinar Platform</h1>
+    </header>
+
+    <div class="container">
+        <h1>Join Our Webinar</h1>
+        <p>Click the button below to join the live webinar session.</p>
+        <a href="#" class="join-button" onclick="startWebinar()">Join Webinar</a>
+
+        <iframe id="webinarFrame" style="display:none;"></iframe>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Your Webinar Platform. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function startWebinar() {
+            const iframe = document.getElementById('webinarFrame');
+            iframe.style.display = 'block';
+            iframe.src = 'https://meet.jit.si/YourWebinarRoom'; // Replace with your custom meeting link if needed
+        }
+    </script>
+</body>
+</html>
